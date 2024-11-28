@@ -1,5 +1,6 @@
 import {useState, useContext} from 'react'
 import {TodoContext} from "../App";
+import "./TodoGenerator.css";
 
 
 const TodoGenerator = () => {
@@ -18,7 +19,7 @@ const TodoGenerator = () => {
     }
 
     return (
-        <div>
+        <div className={"todo-generator"}>
             <input value={text} onChange={handleChange}/>
             <button onClick={handleAdd}>add</button>
         </div>
