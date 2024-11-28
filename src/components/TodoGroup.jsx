@@ -8,9 +8,12 @@ const TodoGroup = () => {
 
     return (
         <div>
-            {state.map((item, index) => {
-                return <TodoItem key={item.id + index} todo={item}/>
-            })}
+            {state.length === 0 ? <div>Add the things you need to do today...</div> :
+                <div>{state.map((item, index) => {
+                    return <TodoItem key={item.id + index} todo={item}/>
+                })}
+                </div>
+            }
         </div>
     );
 }
