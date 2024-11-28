@@ -16,7 +16,9 @@ const TodoGenerator = () => {
     }
 
     const handleAdd = () => {
-        dispatch({type: ADD, payload: text});
+        if (text.trim()) {
+            dispatch({type: ADD, payload: text});
+        }
         setText(SPACE);
     }
 
