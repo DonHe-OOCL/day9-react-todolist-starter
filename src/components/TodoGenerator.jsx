@@ -1,6 +1,8 @@
 import {useState, useContext} from 'react'
 import {TodoContext} from "../App";
 import "./TodoGenerator.css";
+import {ADD} from "../context/todoActions";
+import {SPACE} from "../context/common";
 
 
 const TodoGenerator = () => {
@@ -14,8 +16,8 @@ const TodoGenerator = () => {
     }
 
     const handleAdd = () => {
-        dispatch({type: 'ADD', payload: text});
-        setText('');
+        dispatch({type: ADD, payload: text});
+        setText(SPACE);
     }
 
     return (
