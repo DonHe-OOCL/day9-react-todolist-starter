@@ -1,6 +1,5 @@
 import {ADD, DONE, DELETE} from "./todoActions"
-export const initialState = [
-];
+export const initialState = [];
 
 export const todoReducer = (state, action) => {
   switch (action.type) {

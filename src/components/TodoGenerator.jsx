@@ -1,8 +1,8 @@
 import {useState, useContext} from 'react'
-import {TodoContext} from "../App";
 import "./TodoGenerator.css";
 import {ADD} from "../context/todoActions";
 import {SPACE} from "../context/common";
+import {TodoContext} from "../context/TodoContext";
 
 
 const TodoGenerator = () => {

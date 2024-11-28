@@ -1,5 +1,5 @@
 import {useContext} from 'react'
-import {TodoContext} from "../App";
+import {TodoContext} from "../context/TodoContext";
 import TodoItem from "./TodoItem";
 
 const TodoGroup = () => {
