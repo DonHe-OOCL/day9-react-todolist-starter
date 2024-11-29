@@ -1,4 +1,4 @@
-import {ADD, DONE, DELETE, INIT} from "./todoActions"
+import {ADD, DONE, DELETE, INIT, UPDATE} from "./todoActions"
 export const initialState = [];
 
 export const todoReducer = (state, action) => {
@@ -15,6 +15,10 @@ export const todoReducer = (state, action) => {
       })
     case INIT:
       return action.payload;
+    case UPDATE:
+      return state.map((todo) => {
+        return todo.id === action.payload.id ? {...todo, text: action.payload.text} : todo;
+      })
     default:
       return state;
   }
