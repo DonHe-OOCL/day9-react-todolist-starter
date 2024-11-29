@@ -7,7 +7,7 @@ export const todoReducer = (state, action) => {
       return [...state, {id: action.payload.id, text: action.payload.text, done: action.payload.done}];
     case DONE:
       return state.map((todo) => {
-        return todo.id === action.payload ? {...todo, done: !todo.done} : todo;
+        return todo.id === action.payload.id ? {...todo, done: action.payload.done} : todo;
       })
     case DELETE:
       return state.filter((todo) => {
