@@ -8,6 +8,7 @@ const TodoItem = ({todo}) => {
     const {dispatch} = useContext(TodoContext)
 
     const handleDoneTodo = () => {
+        console.log(todo.id, "done");
         dispatch({type: DONE, payload: todo.id});
     };
 
