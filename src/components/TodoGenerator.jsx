@@ -4,6 +4,7 @@ import {ADD} from "../context/todoActions";
 import {SPACE} from "../context/common";
 import {TodoContext} from "../context/TodoContext";
 import {addTodoItem} from "../api/todo";
+import { Button } from 'antd';
 
 
 const TodoGenerator = () => {
@@ -17,7 +18,7 @@ const TodoGenerator = () => {
     }
 
     const handleAdd = () => {
-        if (text ||text.trim()) {
+        if (text && text.trim()) {
             addTodoItem({ text: text, done: false}).then((todo) => dispatch({type: ADD, payload: todo}));
         }
         setText(SPACE);
@@ -26,7 +27,7 @@ const TodoGenerator = () => {
     return (
         <div className={"todo-generator"}>
             <input value={text} onChange={handleChange}/>
-            <button onClick={handleAdd}>add</button>
+            <Button type="primary" onClick={handleAdd}>add</Button>
         </div>
     );
 
