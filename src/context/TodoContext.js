@@ -1,6 +1,6 @@
 import React, {createContext, useReducer} from 'react';
 import {initialState, todoReducer} from "./todoReducer";
-import {BrowserRouter as Router, Link, Navigate, Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Navigate, NavLink, Route, Routes} from "react-router-dom";
 import TodoList from "../components/TodoList";
 import NotFound from "../components/NotFound";
 import DoneList from "../components/DoneList";
@@ -14,12 +14,12 @@ export const TodoProvider = ({children}) => {
     return (
         <TodoContext.Provider value={{state, dispatch}}>
             <Router>
-                <nav>
-                    <Link to={"/"}>home</Link>
+                <nav style={{ background: '#f2f2f2', padding: '10px' }}>
+                    <NavLink to={"/"} activeStyle={{ fontWeight: 'bold' }}>home</NavLink>
                     {' | '}
-                    <Link to={"/done-list"}>done-list</Link>
+                    <NavLink to={"/done-list"} activeStyle={{ fontWeight: 'bold' }}>done-list</NavLink>
                     {' | '}
-                    <Link to={"/help"}>help</Link>
+                    <NavLink to={"/help"} activeStyle={{ fontWeight: 'bold' }}>help</NavLink>
                 </nav>
                 <Routes>
                     <Route path={"/"} element={<Navigate to={"/todo-list"}/>}/>

@@ -1,5 +1,6 @@
 .done {
     text-decoration: line-through;
+    color: #888; /* 使用浅灰色来表示已完成的任务 */
 }
 
 .todo-item {
@@ -9,10 +10,12 @@
 }
 
 .todo-text {
-    border: solid 1px gray;
+    border: 1px solid #ccc; /* 使用淡灰色边框 */
     width: 400px;
-    padding: 5px;
+    padding: 8px;
     margin-right: 10px;
+    border-radius: 4px; /* 圆角边框 */
+    cursor: pointer;
 }
 
 .item-button {

@@ -1,5 +1,5 @@
 import {useState, useContext} from 'react'
-import "./TodoGenerator.css";
+import "./css/TodoGenerator.css";
 import {ADD} from "../context/todoActions";
 import {SPACE} from "../context/common";
 import {TodoContext} from "../context/TodoContext";

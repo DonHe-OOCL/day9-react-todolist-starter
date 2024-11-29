@@ -1,6 +1,6 @@
 import {useContext, useState} from "react";
 import {TodoContext} from "../context/TodoContext";
-import "./TodoItem.css";
+import "./css/TodoItem.css";
 import {DONE, DELETE, UPDATE} from "../context/todoActions";
 import {deleteTodoItem, updateTodoItem} from "../api/todo";
 import {Button, Input, Modal} from "antd";

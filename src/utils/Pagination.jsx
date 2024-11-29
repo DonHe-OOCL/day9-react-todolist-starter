@@ -14,10 +14,6 @@ const Pagination = ({ totalItems, itemsPerPage, onPageChange }) => {
         onPageChange(pageNumber);
     };
 
-    const handleItemsPerPageChange = (e) => {
-        onPageChange(1);
-    };
-
     const handleJumpPageChange = () => {
         const page = Number(jumpPage);
         if (page >= 1 && page <= totalPages) {
