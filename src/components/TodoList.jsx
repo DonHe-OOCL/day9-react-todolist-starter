@@ -27,8 +27,8 @@ const TodoList = () => {
                 : (
                     <div>
                         <h2>{"Todo List"}</h2>
-                        <TodoGroup/>
                         <TodoGenerator/>
+                        <TodoGroup/>
                     </div>
                 )
         }
