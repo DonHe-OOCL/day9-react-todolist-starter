@@ -4,7 +4,7 @@ export const initialState = [];
 export const todoReducer = (state, action) => {
   switch (action.type) {
     case ADD:
-      return [...state, {id: Date.now(), text: action.payload, done: false}];
+      return [...state, {id: action.payload.id, text: action.payload.text, done: action.payload.done}];
     case DONE:
       return state.map((todo) => {
         return todo.id === action.payload ? {...todo, done: !todo.done} : todo;

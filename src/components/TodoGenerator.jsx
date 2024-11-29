@@ -3,6 +3,7 @@ import "./TodoGenerator.css";
 import {ADD} from "../context/todoActions";
 import {SPACE} from "../context/common";
 import {TodoContext} from "../context/TodoContext";
+import {addTodoItem} from "../api/todo";
 
 
 const TodoGenerator = () => {
@@ -17,7 +18,7 @@ const TodoGenerator = () => {
 
     const handleAdd = () => {
         if (text ||text.trim()) {
-            dispatch({type: ADD, payload: text});
+            addTodoItem({id: Date.now(), text: text, done: false}).then((todo) => dispatch({type: ADD, payload: todo}));
         }
         setText(SPACE);
     }
