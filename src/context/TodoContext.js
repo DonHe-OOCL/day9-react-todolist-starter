@@ -15,7 +15,7 @@ export const TodoProvider = ({children}) => {
             <Router>
                 <nav>
                     <Link to={"/"}>home</Link>
-                    |
+                    {' | '}
                     <Link to={"/done-list"}>done-list</Link>
                 </nav>
                 <Routes>
