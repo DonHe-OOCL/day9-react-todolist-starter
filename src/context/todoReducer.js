@@ -1,4 +1,4 @@
-import {ADD, DONE, DELETE} from "./todoActions"
+import {ADD, DONE, DELETE, INIT} from "./todoActions"
 export const initialState = [];
 
 export const todoReducer = (state, action) => {
@@ -13,6 +13,8 @@ export const todoReducer = (state, action) => {
       return state.filter((todo) => {
         return todo.id !== action.payload;
       })
+    case INIT:
+      return action.payload;
     default:
       return state;
   }
