@@ -18,7 +18,7 @@ const TodoGenerator = () => {
 
     const handleAdd = () => {
         if (text ||text.trim()) {
-            addTodoItem({id: Date.now(), text: text, done: false}).then((todo) => dispatch({type: ADD, payload: todo}));
+            addTodoItem({ text: text, done: false}).then((todo) => dispatch({type: ADD, payload: todo}));
         }
         setText(SPACE);
     }

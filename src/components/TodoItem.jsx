@@ -2,18 +2,20 @@ import {useContext} from "react";
 import {TodoContext} from "../context/TodoContext";
 import "./TodoItem.css";
 import {DONE, DELETE} from "../context/todoActions";
+import {deleteTodoItem} from "../api/todo";
 
 const TodoItem = ({todo}) => {
 
     const {dispatch} = useContext(TodoContext)
 
     const handleDoneTodo = () => {
-        console.log(todo.id, "done");
         dispatch({type: DONE, payload: todo.id});
     };
 
     const handleDeleteTodo = () => {
-        dispatch({type: DELETE, payload: todo.id});
+        deleteTodoItem(todo.id).then((item) =>
+            dispatch({type: DELETE, payload: item.id})
+        );
     }
 
     return (

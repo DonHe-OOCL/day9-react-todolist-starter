@@ -9,7 +9,12 @@ export const getTodoList = async () => {
    return response.data;
 }
 
-export const addTodoItem = async(todo) => {
+export const addTodoItem = async (todo) => {
    const response = await instance.post("/todos", todo);
+   return response.data;
+}
+
+export const deleteTodoItem = async (id) => {
+   const response = await instance.delete(`/todos/${id}`);
    return response.data;
 }
