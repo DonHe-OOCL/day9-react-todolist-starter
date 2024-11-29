@@ -8,7 +8,7 @@ import Help from "../components/Help";
 
 export const TodoContext = createContext();
 
-export const TodoProvider = ({children}) => {
+export const TodoProvider = () => {
     const [state, dispatch] = useReducer(todoReducer, initialState);
 
     return (
