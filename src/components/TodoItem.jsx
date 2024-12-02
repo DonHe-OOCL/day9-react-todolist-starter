@@ -20,8 +20,8 @@ const TodoItem = ({todo}) => {
     };
 
     const handleDeleteTodo = () => {
-        deleteTodoItem(todo.id).then((item) =>
-            dispatch({type: DELETE, payload: item.id})
+        deleteTodoItem(todo.id).then((id) =>
+            dispatch({type: DELETE, payload: id})
         );
     }
 

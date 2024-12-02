@@ -16,6 +16,6 @@ export const deleteTodoItem = async (id) => {
 }
 
 export const updateTodoItem = async (todo) => {
-   const response = await instance.put(`/todos/${todo.id}`, todo);
+   const response = await instance.put(`/todos`, todo);
    return response.data;
 }

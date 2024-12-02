@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "https://67496974868020296630e5be.mockapi.io/todo1"
+    // baseURL: "https://67496974868020296630e5be.mockapi.io/todo"
+    baseURL: "http://127.0.0.1:8080"
 });
 
 instance.interceptors.request.use(
