@@ -24,6 +24,9 @@ instance.interceptors.response.use(
         return response;
     },
     (error) => {
+        if (error.response && error.response.status === 404) {
+            window.location.href = "/not-found";
+        }
         console.error("Response Error:", error);
         return Promise.reject(error);
     }
