@@ -27,6 +27,10 @@ instance.interceptors.response.use(
         if (error.response && error.response.status === 404) {
             window.location.href = "/not-found";
         }
+        if (error.response && error.response.status === 500) {
+            window.location.href = "/hard-stop";
+
+        }
         console.error("Response Error:", error);
         return Promise.reject(error);
     }
