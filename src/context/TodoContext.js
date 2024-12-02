@@ -15,11 +15,11 @@ export const TodoProvider = () => {
         <TodoContext.Provider value={{state, dispatch}}>
             <Router>
                 <nav style={{ background: '#f2f2f2', padding: '10px' }}>
-                    <NavLink to={"/"} activeStyle={{ fontWeight: 'bold' }}>home</NavLink>
+                    <NavLink to={"/"} >home</NavLink>
                     {' | '}
-                    <NavLink to={"/done-list"} activeStyle={{ fontWeight: 'bold' }}>done-list</NavLink>
+                    <NavLink to={"/done-list"}>done-list</NavLink>
                     {' | '}
-                    <NavLink to={"/help"} activeStyle={{ fontWeight: 'bold' }}>help</NavLink>
+                    <NavLink to={"/help"}>help</NavLink>
                 </nav>
                 <Routes>
                     <Route path={"/"} element={<Navigate to={"/todo-list"}/>}/>
