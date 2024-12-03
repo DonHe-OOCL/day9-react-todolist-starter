@@ -7,11 +7,11 @@ const instance = axios.create({
 instance.interceptors.request.use(
     (config) => {
         config.startTime = new Date().getTime();
-        console.log("Request:", config);
+        console.log('Request:', config);
         return config;
     },
     (error) => {
-        console.error("Request Error:", error);
+        console.error('Request Error:', error);
         return Promise.reject(error);
     }
 );
@@ -20,18 +20,17 @@ instance.interceptors.response.use(
     (response) => {
         const endTime = new Date().getTime();
         console.log(`Request duration: ${endTime - response.config.startTime}`);
-        console.log("Response:", response);
+        console.log('Response:', response);
         return response;
     },
     (error) => {
         if (error.response && error.response.status === 404) {
-            window.location.href = "/not-found";
+            alert('Not found: The requested resource was not found.');
         }
         if (error.response && error.response.status === 500) {
-            window.location.href = "/hard-stop";
-
+            alert('Server Error: An unexpected error occurred on the server.');
         }
-        console.error("Response Error:", error);
+        alert('Response Error:' + error);
         return Promise.reject(error);
     }
 );

@@ -12,6 +12,8 @@ const TodoItem = ({todo}) => {
     const [editText, setEditText] = useState(todo.text);
     const [editModalVisible, setEditModalVisible] = useState(false);
 
+    const [isDeleting, setIsDeleting] = useState(false);
+
     const handleDoneTodo = () => {
         const item = {id: todo.id, text: todo.text, done: !todo.done};
         updateTodoItem(item).then(() => {
@@ -20,8 +22,12 @@ const TodoItem = ({todo}) => {
     };
 
     const handleDeleteTodo = () => {
+        if (isDeleting) return;
+        setIsDeleting(true);
         deleteTodoItem(todo.id).then((id) =>
             dispatch({type: DELETE, payload: id})
+        ).finally(
+            () => setIsDeleting(false)
         );
     }
 
@@ -29,9 +35,9 @@ const TodoItem = ({todo}) => {
         if (!editText || !editText.trim() || editText === todo.text) {
             return;
         }
-        const item = { id: todo.id, text: editText, done: todo.done };
+        const item = {id: todo.id, text: editText, done: todo.done};
         updateTodoItem(item).then(() => {
-            dispatch({ type: UPDATE, payload: item });
+            dispatch({type: UPDATE, payload: item});
             setEditModalVisible(false);
         });
     };
@@ -52,7 +58,7 @@ const TodoItem = ({todo}) => {
                 onOk={handleEditSave}
                 onCancel={handleEditCancel}
             >
-                <Input value={editText} onChange={(e) => setEditText(e.target.value)} />
+                <Input value={editText} onChange={(e) => setEditText(e.target.value)}/>
             </Modal>
         </div>
     );
